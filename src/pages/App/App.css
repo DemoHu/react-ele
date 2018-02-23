@@ -1,0 +1,27 @@
+.app {
+    height: 100%;
+    font-size: 0.3rem;
+}
+
+.header {
+    font-size: 0.3rem;
+    background-color: #fff;
+}
+
+.title {
+    padding: 0px 20px;
+    height: 0.75rem;
+    background-color: #3190e8;
+    color: #fff;
+}
+
+.notice {
+    height: 0.6rem;
+    font-size: 0.24rem;
+    border-bottom: 1px solid #ccc;
+}
+.address{
+    height: 0.76rem;
+    font-size: 0.32rem;
+    border-bottom: 2px solid #ccc;
+}
