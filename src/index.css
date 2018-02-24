@@ -19,3 +19,11 @@ body {
 .font_color{
     color: #3190e8;
 }
+.font_gray{
+    color: #666;
+}
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -25,3 +25,28 @@
     font-size: 0.32rem;
     border-bottom: 2px solid #ccc;
 }
+.hot_city{
+    background-color: #ffffff;
+    margin-top: 0.3rem;
+    border-top: 1px solid #ccc;
+}
+.hot_name{
+    height:0.75rem;
+}
+.hot_box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.hot_box >span{
+    width: 25%;
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    line-height: 0.75rem;
+    text-wrap: none;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+.hot_box >span:nth-of-type(4n){
+    border-right: 1px solid #ffffff;
+}
