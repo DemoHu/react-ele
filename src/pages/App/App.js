@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {getAddress, saveAddressAll} from '../../reducers/address/addressAction'
 import {get} from 'axios'
-import {objectMap} from '../../common/tool'
+import {objectMap,length,sortgroupcity} from '../../common/tool'
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 function mapStateToProps(state) {
@@ -27,13 +27,22 @@ class App extends Component {
     super(props);
     this.state = {
       group: {},
-      address: '',
+      address: {},
       hot: []
     }
   }
 
   componentDidMount() {
-    this.getAddressAll()
+    let {addressAll,hot,address} = this.props.address;
+   if(length(addressAll)&&length(hot)&&length(address)){
+     this.setState({
+       group:addressAll,
+       hot:hot,
+       address:address,
+     });
+   }else {
+     this.getAddressAll()
+   }
   }
 
   toDetail(data) {
@@ -44,7 +53,7 @@ class App extends Component {
   getAddressAll() {
     const {dispatch} = this.props;
     dispatch(getAddress('group', (data) => {
-      this.setState({group: this.sortgroupcity(data)})
+      this.setState({group: sortgroupcity(data)})
     }));
     dispatch(getAddress('guess', (data) => {
       this.setState({address: data});
@@ -53,16 +62,6 @@ class App extends Component {
       this.setState({hot: data});
     }));
 
-  }
-
-  sortgroupcity(data) {
-    let sortobj = {};
-    for (let i = 65; i <= 90; i++) {
-      if (data[String.fromCharCode(i)]) {
-        sortobj[String.fromCharCode(i)] = data[String.fromCharCode(i)];
-      }
-    }
-    return sortobj
   }
 
   render() {
