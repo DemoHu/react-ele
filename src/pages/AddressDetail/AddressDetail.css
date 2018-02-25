@@ -1,0 +1,25 @@
+.input_address{
+    margin-top: 0.3rem ;
+    background-color: #ffffff;
+    padding: 0.2rem ;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    font-size: 0.24rem;
+}
+.input_address .input{
+    height: 0.6rem ;
+    font-size: 0.24rem;
+    border-radius: 8px;
+}
+.submit{
+    height: 0.6rem ;
+    font-size: 0.24rem;
+    margin-top: 0.3rem;
+    width: 100%;
+}
+.item div:nth-of-type(1){
+    font-size: 0.26rem;
+}
+.item div:nth-of-type(2){
+    font-size: 0.23rem;
+}
