@@ -30,3 +30,12 @@ export function getAddress(type = 'group',callback) {
     })
   }
 }
+
+export function getAddressSearch(keyword = '北京',callback) {
+  return dispatch => {
+    axios.get(`http://cangdu.org:8001/v1/pois?city_id=1&keyword=${keyword}&type=search`)
+        .then(res=>{
+          callback(res.data);
+        })
+  }
+}
